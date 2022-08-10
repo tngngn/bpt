@@ -1,3 +1,14 @@
+/* 
+    @bpt implementation
+    
+    status:
+    insert  : done
+    delete  : inactive
+    search  : inactive
+    print   : done
+
+*/
+
 #include <iostream>
 #include <vector>
 using namespace std;
