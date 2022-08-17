@@ -2,10 +2,11 @@
     @bpt implementation
     
     status:
-    insert  : done
-    delete  : inactive
-    search  : inactive
-    print   : done
+    insert      : done
+    delete      : in progress
+    query       : inactive
+    range query : inactive
+    print       : done
 
 */
 
@@ -163,9 +164,6 @@ void insertion(int k, node *p) {                        // insert(key K, pointer
     }
 }
 
-/*
-// Deletion is in progress
-
 // DELETE ENTRY
 
 void delete_entry(node *n, int k, node *p) {
@@ -187,7 +185,18 @@ void deletion(int k, node *p) {
     printf("key to delete does not exist.");
     return;
 }
-*/
+
+// QUERY
+
+void find(int v) {
+
+}
+
+// RANGE QUERY
+
+void find_range(int lb, int ub) {
+
+}
 
 // PRINT TREE
 
@@ -230,8 +239,6 @@ int main(){
     }
     printTree(Root);
     */
-    
-    int k;
     while(true){
         printf("\ninput 1 <v> RET to insert v \ninput 0 RET to exit\n");
         int choice;
@@ -244,7 +251,7 @@ int main(){
             printf("\n\n\n");
             printTree(Root);
             printf("\n\n\n");
-        /*
+        
         }else if(choice==2){
             int value;
             scanf("%d",&value);
@@ -253,16 +260,13 @@ int main(){
             printf("\n\n\n");
             printTree(Root);
             printf("\n\n\n");
-        */
+        
         }else if(choice==0) break;
         else {
             printf("\n\n\n");
             printf("wrong input syntax, try again.");
             printf("\n\n\n");
         }
-
     }
-    
-
     return 0;
 }
