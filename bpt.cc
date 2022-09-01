@@ -167,18 +167,24 @@ void insertion(int k, node *p) {                        // insert(key K, pointer
 // DELETE ENTRY
 
 void delete_entry(node *n, int k, node *p) {
+    if(n->isRoot&&n->child.size()==1) {                                     // if N is the root of the tree then
+        Root = n->child[0];  
+        Root->parent = NULL;                 
+        n->isRoot = false;
+        free(n);
+    }
 
 }
 
 // MAIN DELETE
 
 void deletion(int k, node *p) {
-    node *deleteNode;
-    deleteNode = foundedNode(Root, k);
+    node *leafNode;
+    leafNode = foundedNode(Root, k);
     int i;
-    for (i=0;i<deleteNode->value.size();i++) {
-        if(deleteNode->value[i]==k) {
-            delete_entry(deleteNode,k,p);
+    for (i=0;i<leafNode->value.size();i++) {
+        if(leafNode->value[i]==k) {
+            delete_entry(leafNode,k,p);
             return;
         }
     }
